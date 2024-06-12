@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Dashboard</title>
+</head>
+
+<body class="hidden">
+    <div class="main-container d-flex ">
+        <div class="sidebar px-2 py-2" id="side_nav">       
+            <div class="header-box px-1 pt-3 pb-4 d-flex justify-content-between">
+                <h2 class="fs-4 "><span><img src="assests/img/logo.png" alt="Logo" class="px-2" width="60%"></span><span
+                        class="text-dark hrms shadow bg-white rounded  px-2">HRMS</span></h2>
+                <button class="btn close-btn d-md-none d-block px-2 py-1 rounded text-white"><i
+                        class="fas fa-times"></i></button>
+            </div>
+            <ul class="list-unstyled">
+                <li class="active"><a href="#" onclick="openTab(event, 'dashboard')"
+                        class="side_links text-decoration-none px-3 close-btn py-2 d-block"
+                        data-content="dashboard.html" data-title="Dashboard"><i
+                            class="fa-solid fa-house px-2"></i>Dashboard</a></li>
+                <li class=""><a href="#" onclick="openTab(event, 'profile')"
+                        class="side_links text-decoration-none close-btn px-3 py-2 d-block" data-content="profile.html"
+                        data-title="Profile"><i class="fas fa-user-alt px-2"></i> Profile</a></li>
+                <li class=""><a href="#" onclick="openTab(event, 'dailytask')"
+                        class="side_links text-decoration-none close-btn px-3 py-2 d-block"
+                        data-content="dailytask.html" data-title="Daily Tasks"><i class="fas fa-tasks px-2"></i>Daily
+                        Task</a></li>
+                <li class=""><a href="#" onclick="openTab(event, 'attendence')"
+                        class="side_links text-decoration-none close-btn px-3 py-2 d-block"
+                        data-content="attendence.html" data-title="Attendence"><i
+                            class="fas fa-calendar-alt px-2"></i>Attendence</a></li>
+                <li class=""><a href="#" onclick="openTab(event, 'accounts')"
+                        class="side_links text-decoration-none close-btn px-3 py-2 d-block" data-content="accounts.html"
+                        data-title="Accounts"><i class="fa-solid fa-building-columns px-2"></i>Accounts</a></li>
+            </ul>
+
+            <hr class="h-color  mx-3 my-1">
+        </div>
+
+        <div class="content">
+            <div class="mobile-head d-block d-md-none m-auto text-center fs-1">
+                <h2 class="fs-4 "><span><img src="/assests/img/logo.png" alt="Logo" class="p-2 m-2"
+                            width="150"></span><span class="text-dark hrms shadow bg-white rounded  px-2">HRMS</span>
+                </h2>
+            </div>
+            <nav class="navbar sticky-top navbar-light bg-light d-flex justify-content-between">
+                <button class="btn open-btn d-md-none d-block p-2 m-1 rounded text-dark"><i
+                        class="fas fa-bars"></i></button>
+                <a class="navbar-brand px-4 fs-4" href="#">Home</a>
+                <a class="navbar-brand px-3 d-md-block d-none fs-5" href="#">Logout </a>
+
+                <button class="btn logout-btn d-md-none d-block p-2 m-1 rounded text-dark"><i
+                        class="fas fa-sign-out-alt"></i></button>
+
+            </nav>
+            <!-- ---------------------------------------------|MAIN CONTENT|--------------------------------------------- -->
+            <div class="main-content rounded shadow m-auto p-auto" id="main-content">
+
+                <div id="dashboard" class="tabcontent">
+                    <div class="container-fluid " style="height: 90vh">
+                        <div class="row g-4 d-flex align-items-center justify-content-evenly text-center">
+                            <div
+                                class="col-xxl-4 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 shadow border-0 card p-2">
+                                <div class=" card-body p-2 d-flex justify-content-evenly">
+                                    <img src="/assests/img/b-prfile.jpg" alt="" width="150" height="150"
+                                        class="shadow m-auto rounded-circle p-2">
+                                    <div class="card m-auto border-0">
+                                        <h4 class="responsive-font-example">Purushothama N</h4>
+                                        <small class="p-1">Role : Asst Network Engineer</small>
+                                    </div>
+                                </div>
+                                <div class="card m-auto border-1 pt-3 w-100 text-center text-muted shadow-sm border-0 ">
+                                    <h6 class="responsive-font-example">Duty Shift: <span
+                                            class="text-dark m-1 justify-content-end">09:30AM - 06:30PM</span></h6>
+                                    <h6 class="responsive-font-example">Joined On: <span
+                                            class="text-dark m-1">13-02-2024 </span></h6>
+                                </div>
+                            </div>
+                            <div
+                                class="col-xxl-3 col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12  border-0 shadow rounded">
+                                <div class="card border-0">
+                                    <h5 class="card-header card-title">Leaves overview</h5>
+                                    <div class="card-body">
+                                        <div class="card border-0" style="width: 100%;">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">No. of Leaves</th>
+                                                        <th scope="col">Leave type</th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">10</th>
+                                                        <td>Casual Leave (CL)</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">31</th>
+                                                        <td>Loss of Pay (LOP)</td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>Comp-off</td>
+
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12 border-0 rounded shadow">
+                                <div class="card border-0 ">
+                                    <h5 class="card-header card-title">Biometric Report</h5>
+                                    <div class="card-body m-4">
+                                        <div class="card border-0" style="width: 100%;">
+                                            <table class="table table-hover ">
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">Check In</th>
+                                                        <td>
+                                                            <div class="btn btn-primary rounded-pill shadow p-1">
+                                                                09:27:58</div>
+                                                        </td>
+
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Check Out</th>
+                                                        <td>
+                                                            <div class="btn btn-primary rounded-pill shadow p-1">
+                                                                09:27:58</div>
+                                                        </td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row g-4 d-flex justify-content-evenly  mt-4">
+                            <div class="col-xxl-3 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 p-auto rounded shadow">
+                                <div class="card border-0 ">
+                                    <h5 class="card-header card-title">Overview</h5>
+                                    <div class="card-body mt-4 text-center">
+                                        <div class="card border-0" style="width: 100%;">
+                                            <table class="table table-hover ">
+                                                <tbody>
+                                                    <tr>
+                                                        <button type="button" class="btn btn-primary" onclick="openTab(event, 'attendence')">
+                                                            Applied Leaves <span
+                                                                class="badge text-bg-secondary">5</span>
+                                                        </button>
+                                                    </tr>
+                                                    <hr>
+                                                    <tr>
+                                                        <button type="button" class="btn btn-primary" onclick="openTab(event, 'dailytask')">
+                                                            Daily Task <span class="badge text-bg-secondary">4</span>
+                                                        </button>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12 rounded shadow p-auto">
+                                <div class="card border-0">
+                                    <h5 class="card-header card-title">Reminder <i
+                                            class="fa-solid fa-bell p-1 m-auto"></i></h5>
+                                    <div class="card-body mt-4">
+                                        Dear Team,
+                                        The monthly staff meeting will be held on 15-05-2024 (Wednesday) at 09.00 AM in
+                                        Maroli office. All the staffs are requested to be available without fail in the
+                                        Maroli office on time.
+                                        <hr>
+                                        If you have any doubt, kindly contact <a href="#"
+                                            style="text-decoration: none;">Swetha kotian (HR)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-3 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 p-1">
+                                <div class="card border-0 shadow">
+                                    <h5 class="card-header card-title">Birthday's Today</h5>
+                                    <div class="card-body ">
+                                        <div id="carouselExampleSlidesOnly" class="carousel slide"
+                                            data-bs-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="assests/img/119.jpg" width="300" height="300"
+                                                        style="object-fit: cover;" class="rounded d-block w-100"
+                                                        alt="...">
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="assests/img/cat.jpg" width="300" height="300"
+                                                        style="object-fit: cover;" class="rounded d-block w-100"
+                                                        alt="...">
+                                                </div>
+                                                <!-- <div class="carousel-item">
+                                                <img src="..." class="d-block w-100" alt="...">
+                                              </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="profile" class="tabcontent" style="display: block;" >
+                    <div class="container m-auto p-3 h-100">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-12 col-lg-4 m-auto text-center">
+
+                                <img src="https://images.pexels.com/photos/7515368/pexels-photo-7515368.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                                    width="300" height="300" class="rounded-circle m-auto shadow " alt="" srcset="">
+                            </div>
+                            <div class="col-md-12 col-12 col-lg-8 m-auto p-2">
+
+                                <div class="card border-0 p-auto shadow
+                                ">
+                                    <h5 class="card-header card-title">Basic Information</h5>
+
+                                    <div class="card-body text-center">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Full Name :</th>
+                                                    <th scope="col">Purushothama
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col">Father/Wife's Name :</th>
+                                                    <th scope="col">Murthy</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">D.O.B :</th>
+                                                    <th scope="col">01/02/2024</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">Contact :</th>
+                                                    <th scope="">First</th>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row p-auto m-auto mt-5">
+
+                            <div class="col-md-13 col-12 ">
+
+                                <div class="card border-0 p-auto shadow
+                                ">
+                                    <h5 class="card-header card-title">Employement Information</h5>
+
+                                    <div class="card-body text-center">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Salary Package :</th>
+                                                    <th scope="col">1,44,000 CTC
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col">Salary Type :</th>
+                                                    <th scope="col">Bank Transfer</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">Designation :</th>
+                                                    <th scope="col">Asst. Network Engineer</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">Date of Join :</th>
+                                                    <th scope="">04/05/5222</th>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="m-auto border-5 mt-2 mb-2 shadow w-75">
+                            <div class="col-md-12  col-12">
+
+                                <div class="card border-0 p-auto shadow
+                                ">
+                                    <h5 class="card-header card-title">Department Information</h5>
+
+                                    <div class="card-body text-center">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Department :</th>
+                                                    <th scope="col">Engineering
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col">Dept. Head :</th>
+                                                    <th scope="col">Sujith Kumar</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">Shift :</th>
+                                                    <th scope="col">Rotational Shift</th>
+
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">Immediate Report :</th>
+                                                    <th scope="">Sujith Kumar</th>
+
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="dailytask" class="tabcontent" >
+                    <div class="container-fluid p-3">
+                        <div class="row d-flex justify-content-evenly p-3">
+                            <div class="m-1 p-3 col-sm-6 col-md-6 col-lg-3 col-xl-2 btn btn-primary rounded-pill shadow-sm fs-4">
+                                Total <i class="fa-solid fa-list-check m-auto px-3 fs-3 p-2 "></i>
+                            </div>
+                            <div class="m-1 p-3 col-sm-6 col-md-6 col-lg-3 col-xl-2 btn btn-warning rounded-pill shadow-sm fs-4">
+                                Completed <i
+                                    class="fa-solid fa-thumbs-up m-auto px-3 fs-3 p-2"></i></div>
+                            <div class="m-1 p-3 col-sm-6 col-md-6 col-lg-3 col-xl-2 btn btn-danger rounded-pill shadow-sm fs-4">
+                                Pending <i
+                                    class="fa-solid fa-hourglass-half m-auto px-3 fs-3 p-2"></i>
+                            </div>
+                            <div
+                                class="m-1 p-3 col-sm-6 col-md-6 col-lg-3 col-xl-2 btn btn-secondary rounded-pill shadow-sm fs-4">
+                                In Progress <i
+                                    class="fa-solid fa-spinner m-auto px-3 fs-3  p-2"></i></div>
+                        </div>
+                        <hr>
+                        <div class="container-fluid p-3">
+                            <div class="row d-flex justify-content-evenly ">
+                                <div class="card m-auto border-0">
+                                    <div class="card-body m-auto shadow p-2 m-2 w-100">
+                                        <div class="card m-auto border-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">This is a task</div>
+                                                    <div class="col-5">
+                                                        <div class="row d-flex justify-content-between">
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-pen p-auto"></i><span class="d-none d-md-block">Edit</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-circle-check p-auto"></i><span class="d-none d-md-block">Completed</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-trash-can p-auto"></i><span class="d-none d-md-block">Delete</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card m-auto border-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">This is a task</div>
+                                                    <div class="col-5">
+                                                        <div class="row d-flex justify-content-between">
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-pen p-auto"></i><span class="d-none d-md-block">Edit</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-circle-check p-auto"></i><span class="d-none d-md-block">Completed</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-trash-can p-auto"></i><span class="d-none d-md-block">Delete</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card m-auto border-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">This is a task</div>
+                                                    <div class="col-5">
+                                                        <div class="row d-flex justify-content-between">
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-pen p-auto"></i><span class="d-none d-md-block">Edit</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-circle-check p-auto"></i><span class="d-none d-md-block">Completed</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-trash-can p-auto"></i><span class="d-none d-md-block">Delete</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card m-auto border-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">This is a task</div>
+                                                    <div class="col-5">
+                                                        <div class="row d-flex justify-content-between">
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-pen p-auto"></i><span class="d-none d-md-block">Edit</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-circle-check p-auto"></i><span class="d-none d-md-block">Completed</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-trash-can p-auto"></i><span class="d-none d-md-block">Delete</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card m-auto border-0">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col">This is a task</div>
+                                                    <div class="col-5">
+                                                        <div class="row d-flex justify-content-between">
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-pen p-auto"></i><span class="d-none d-md-block">Edit</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-circle-check p-auto"></i><span class="d-none d-md-block">Completed</span></div>
+                                                            <div class="col-4 col-sm-6 col-md-6 col-lg-3 col-xl-2"><i class="fa-solid m-auto fa-trash-can p-auto"></i><span class="d-none d-md-block">Delete</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="attendence" class="tabcontent" >
+                    <div class="container-fluid ">
+                    <iframe src="calendar.html" frameborder="0" style="height:90vh" width="100%" ></iframe>
+
+                    </div>
+                </div>
+                </div>
+
+
+                <div id="accounts" class="tabcontent">
+                    <div class="container-fluid">
+                        <div class="row p-auto m-auto mt-5">
+
+                            <div class="col-md-13 col-12 ">
+                        
+                                <div class="card border-0 p-auto shadow">
+                                    <h5 class="card-header card-title">Bank Details</h5>
+                        
+                                    <div class="card-body text-center">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Bank Name:</th>
+                                                    <th scope="col">ABC Bank</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col">Account Number:</th>
+                                                    <th scope="col">1234567890</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">IFSC Code:</th>
+                                                    <th scope="col">ABCD0123456</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">Branch:</th>
+                                                    <th scope="">Branch Name</th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="col-md-12 col-12 m-3">
+                        
+                                <div class="card border-0 p-auto shadow">
+                                    <h5 class="card-header card-title">Documents</h5>
+                        
+                                    <div class="card-body text-center">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Document Type</th>
+                                                    <th scope="col">Details</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="col">Aadhar Card</th>
+                                                    <th scope="col">1234 5678 9012</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">PAN Card</th>
+                                                    <th scope="col">ABCDE1234F</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">Other Documents</th>
+                                                    <th scope="">Details Here</th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <footer class="main-footer text-center m-2">
+                
+                    <strong>Copyright &copy; 2014-2024 <a href="https://deenetservices.net">Deenet Teams</a>.</strong> All rights reserved.
+                  </footer> 
+            </div>
+            
+        </div>
+        
+    </div>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+
+</html>
